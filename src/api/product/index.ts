@@ -5,8 +5,8 @@ import { productSchema } from "./schema/product.schema";
 
 const route = Router();
 
-route.post("/", schemaValidation(productSchema), createProduct);
 route.get("/", getProducts);
 route.get("/:id", getProductById);
+route.post("/", schemaValidation(productSchema), createProduct);
 
 export default route;
