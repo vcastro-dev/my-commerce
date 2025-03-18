@@ -1,5 +1,7 @@
 import { Router } from "express";
-import productRoute from "./product";
+import productRoute from "./domain/product";
+import { schemaValidation } from "./middleware/schemaValidation";
+import { schema } from "./domain/product/schema/product.schema";
 
 const routes = Router();
 

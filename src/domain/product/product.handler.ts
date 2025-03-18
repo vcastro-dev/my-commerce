@@ -1,12 +1,11 @@
 import { Request, Response } from "express";
-import { Product } from "./product.model";
 
 const products: Product[] = [];
 
 export async function createProduct(req: Request, res: Response) {
   const { name, price } = req.body;
   const product: Product = {
-    id: Math.random().toString(),
+    id: `${products.length + 1}`,
     name,
     price,
   };
@@ -16,4 +15,13 @@ export async function createProduct(req: Request, res: Response) {
 
 export async function getProducts(req: Request, res: Response) {
   res.json(products);
+}
+
+export async function getProductById(req: Request, res: Response) {
+  const product = products.find((product) => product.id === req.params.id);
+  if (!product) {
+    res.status(404).json({});
+    return;
+  }
+  res.json(product);
 }
