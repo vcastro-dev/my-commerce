@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "db:migrate:dev": "npx prisma migrate dev"
+    "db:deploy": "npx migrate deploy & npx prisma generate"
   },
   "keywords": [],
   "author": "",
