@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
+    "dev": "db:deploy & tsx watch src/server.ts",
     "db:deploy": "npx migrate deploy & npx prisma generate"
   },
   "keywords": [],
