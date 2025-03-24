@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "db:deploy": "npx prisma migrate deploy && npx prisma generate",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
-    "dev": "db:deploy & tsx watch src/server.ts",
-    "db:deploy": "npx migrate deploy & npx prisma generate"
+    "prestart": "npm run db:deploy && npm run build",
+    "start": "node dist/server.js"    
   },
   "keywords": [],
   "author": "",
