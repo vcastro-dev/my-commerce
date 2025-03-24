@@ -1,9 +1,8 @@
 import { Router } from "express";
+import { productRouter } from "../api/product";
 
 const apiRoutes = Router();
 
-apiRoutes.use("/users", (req, res) => {
-  res.send("Users route");
-});
+apiRoutes.use("/products", productRouter);
 
 export { apiRoutes };

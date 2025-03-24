@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { z } from "zod";
 
-export function schemaValidation(schema: z.Schema<any>) {
+export function schemaValidation<T>(schema: z.Schema<T>) {
   return (req: Request, res: Response, next: NextFunction) => {
     try {
       schema.parse(req.body);
