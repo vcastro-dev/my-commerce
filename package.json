@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "db:deploy & tsx watch src/server.ts",
-    "db:deploy": "npx migrate deploy & npx prisma generate"
+    "build": "tsc",
+    "db:deploy": "npx prisma migrate deploy && npx prisma generate",
+    "prestart": "npm run db:deploy && npm run build",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
