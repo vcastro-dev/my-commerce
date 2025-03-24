@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "db:deploy": "npx prisma migrate deploy && npx prisma generate",
+    "prisma:generate": "npx prisma generate",
+    "db:deploy": "npx prisma migrate deploy && npm run prisma:generate",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
     "build": "tsc",
@@ -16,6 +17,7 @@
   "description": "",
   "devDependencies": {
     "@eslint/js": "^9.23.0",
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.13.10",
     "eslint": "^9.23.0",
