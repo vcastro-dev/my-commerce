@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
     "db:deploy": "npx prisma migrate deploy && npx prisma generate",
+    "build": "tsc",
     "prestart": "npm run db:deploy && npm run build",
     "start": "node dist/server.js"
   },
