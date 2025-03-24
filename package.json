@@ -6,8 +6,9 @@
     "db:deploy": "npx prisma migrate deploy && npx prisma generate",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
+    "build": "tsc",
     "prestart": "npm run db:deploy && npm run build",
-    "start": "node dist/server.js"    
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
